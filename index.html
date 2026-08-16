@@ -942,13 +942,10 @@
                 </span>
 
 
-                <button class="project-details-btn">
-
-                    Explore Project
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </button>
+              <button class="project-details-btn" onclick="openProject('destino')">
+    Explore Project
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
 
             </div>
 
@@ -1013,14 +1010,10 @@
                 </span>
 
 
-                <button class="project-details-btn">
-
-                    Explore Project
-
-                    <i class="fa-solid fa-arrow-right"></i>
-
-                </button>
-
+               <button class="project-details-btn" onclick="openProject('rentease')">
+    Explore Project
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
             </div>
 
         </article>
@@ -1057,7 +1050,7 @@
 
     </div>
 
-
+    
     <button class="achievement-card"
             id="achievementCard">
 
@@ -1098,6 +1091,11 @@
         </div>
 
     </button>
+    <button class="achievement-view-btn" onclick="openAchievement()">
+    <i class="fa-solid fa-trophy"></i>
+    View 1st Prize Details
+    <i class="fa-solid fa-arrow-right"></i>
+</button>
 
 </section>
 
@@ -1834,6 +1832,138 @@
 
 <!-- JavaScript -->
 <script src="script.js"></script>
+<!-- PROJECT DETAILS POPUP -->
+<div id="projectModal" class="project-modal">
 
+    <div class="project-modal-content">
+
+        <button class="modal-close" onclick="closeProject()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+            <span id="modalCategory"></span>
+            <h2 id="modalTitle"></h2>
+            <span id="modalStatus" class="modal-status"></span>
+        </div>
+
+        <div class="modal-section">
+            <h3>
+                <i class="fa-solid fa-circle-question"></i>
+                Problem Statement
+            </h3>
+            <p id="modalProblem"></p>
+        </div>
+
+        <div class="modal-section">
+            <h3>
+                <i class="fa-solid fa-lightbulb"></i>
+                Solution
+            </h3>
+            <p id="modalSolution"></p>
+        </div>
+
+        <div class="modal-section">
+            <h3>
+                <i class="fa-solid fa-star"></i>
+                Key Features
+            </h3>
+
+            <ul id="modalFeatures"></ul>
+        </div>
+
+        <div class="modal-section">
+            <h3>
+                <i class="fa-solid fa-code"></i>
+                Technologies
+            </h3>
+
+            <div id="modalTech" class="modal-tech"></div>
+        </div>
+
+        <div class="modal-footer">
+            <span id="modalProgress"></span>
+        </div>
+
+    </div>
+
+</div>
+<!-- 1ST PRIZE POPUP -->
+
+<div id="achievementModal" class="project-modal">
+
+    <div class="project-modal-content">
+
+        <button class="modal-close" onclick="closeAchievement()">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div class="modal-header">
+
+            <span>ACHIEVEMENT</span>
+
+            <h2>🥇 1st Prize</h2>
+
+            <span class="modal-status">
+                Android Development Ideathon
+            </span>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h3>
+                <i class="fa-solid fa-trophy"></i>
+                Achievement
+            </h3>
+
+            <p>
+                Won 1st Prize in an Android Development Ideathon
+                for the RentEase AI concept.
+            </p>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h3>
+                <i class="fa-solid fa-lightbulb"></i>
+                Project Behind the Achievement
+            </h3>
+
+            <p>
+                RentEase AI is an AI-powered rental platform designed
+                to help users discover suitable rental houses,
+                apartments, PGs, hostels and rooms based on location,
+                budget and preferences.
+            </p>
+
+        </div>
+
+        <div class="modal-section">
+
+            <h3>
+                <i class="fa-solid fa-star"></i>
+                Key Highlights
+            </h3>
+
+            <ul>
+                <li>AI-powered rental recommendations</li>
+                <li>Rental property discovery</li>
+                <li>Location-based search</li>
+                <li>Nearby services</li>
+                <li>Maps integration</li>
+                <li>Modern mobile application concept</li>
+            </ul>
+
+        </div>
+
+        <div class="modal-footer">
+            🏆 1st Prize — A proud milestone in my development journey
+        </div>
+
+    </div>
+
+</div>
 </body>
 </html>
