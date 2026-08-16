@@ -769,3 +769,220 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 });
+/* =====================================================
+   PROJECT DETAILS POPUP
+===================================================== */
+
+const projectData = {
+
+    destino: {
+
+        category: "Travel / Tourism Application",
+
+        title: "Destino",
+
+        status: "🚧 Currently Building",
+
+        problem:
+            "Discovering interesting travel destinations and getting useful information in one engaging platform can be difficult. Many travelers have to search across multiple sources to find places, information and travel experiences.",
+
+        solution:
+            "Destino is a tourism-focused digital platform designed to help users discover interesting destinations and explore travel experiences in a simple and engaging way. The project is currently under development and new features are being implemented.",
+
+        features: [
+            "Destination discovery",
+            "Travel information",
+            "Modern and engaging UI/UX",
+            "Interactive travel experience",
+            "AI-powered possibilities",
+            "Maps integration",
+            "Easy exploration",
+            "Mobile-friendly experience"
+        ],
+
+        technologies: [
+            "Flutter",
+            "AI",
+            "Maps",
+            "UI/UX Design"
+        ],
+
+        progress:
+            "🚧 Work in Progress — Currently building and improving Destino"
+    },
+
+
+    rentease: {
+
+        category: "AI + Rental Platform",
+
+        title: "RentEase AI",
+
+        status: "🏗️ Building in Progress",
+
+        problem:
+            "Finding suitable rental houses, apartments, PGs, hostels and rooms based on budget, location and personal preferences can be time-consuming. Users may also need to search separately for nearby restaurants, hospitals, colleges, pharmacies and other services.",
+
+        solution:
+            "RentEase AI is an AI-powered rental platform designed to help users discover suitable rental properties based on their location, budget and preferences. It also aims to connect users with useful nearby services and make rental decisions easier.",
+
+        features: [
+            "AI-powered recommendations",
+            "Rental property discovery",
+            "Location-based search",
+            "Nearby services",
+            "Google Maps integration",
+            "Google Places integration",
+            "Owner and user interaction",
+            "Ratings and reviews",
+            "Property listings",
+            "Modern mobile UI"
+        ],
+
+        technologies: [
+            "Flutter",
+            "AI",
+            "Google Maps",
+            "Google Places",
+            "Cloud Firestore",
+            "Material 3"
+        ],
+
+        progress:
+            "🏗️ From Idea → Prototype → Product — Currently building RentEase AI"
+    }
+
+};
+
+
+/* OPEN PROJECT */
+
+function openProject(projectName) {
+
+    const project = projectData[projectName];
+
+    if (!project) return;
+
+    document.getElementById("modalCategory").textContent =
+        project.category;
+
+    document.getElementById("modalTitle").textContent =
+        project.title;
+
+    document.getElementById("modalStatus").textContent =
+        project.status;
+
+    document.getElementById("modalProblem").textContent =
+        project.problem;
+
+    document.getElementById("modalSolution").textContent =
+        project.solution;
+
+    const featuresContainer =
+        document.getElementById("modalFeatures");
+
+    featuresContainer.innerHTML = "";
+
+    project.features.forEach(function(feature) {
+
+        const li = document.createElement("li");
+
+        li.textContent = feature;
+
+        featuresContainer.appendChild(li);
+
+    });
+
+
+    const techContainer =
+        document.getElementById("modalTech");
+
+    techContainer.innerHTML = "";
+
+    project.technologies.forEach(function(tech) {
+
+        const span = document.createElement("span");
+
+        span.textContent = tech;
+
+        techContainer.appendChild(span);
+
+    });
+
+
+    document.getElementById("modalProgress").textContent =
+        project.progress;
+
+
+    document.getElementById("projectModal")
+        .classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+/* CLOSE PROJECT */
+
+function closeProject() {
+
+    document.getElementById("projectModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document.addEventListener("click", function(event) {
+
+    const modal =
+        document.getElementById("projectModal");
+
+    if (
+        event.target === modal
+    ) {
+        closeProject();
+    }
+
+});
+
+
+/* CLOSE WITH ESC KEY */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeProject();
+
+    }
+
+});
+function openAchievement() {
+
+    document
+        .getElementById("achievementModal")
+        .classList.add("active");
+
+    document.body.style.overflow = "hidden";
+}
+
+
+function closeAchievement() {
+
+    document
+        .getElementById("achievementModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+}
+
+
+document.getElementById("achievementModal").addEventListener("click", function(event) {
+
+    if (event.target === this) {
+        closeAchievement();
+    }
+
+});
